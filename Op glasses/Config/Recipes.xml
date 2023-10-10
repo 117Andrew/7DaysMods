@@ -1,0 +1,61 @@
+<OpGlasses>
+	<append xpath="/recipes">
+	
+<!-- Crafteo de los op glasses sin vision nocturna -->
+
+		<recipe name="OpGlassesToughGuy" count="1" material_base="true" craft_area="workbench" craft_time="5">
+			<ingredient name="apparelNerdGlasses" count="1"/>
+			<ingredient name="apparelSkiGoggles" count="1"/>
+			<ingredient name="apparelAviatorGoggles" count="1"/>
+			<ingredient name="apparelToughGuySunglasses" count="1"/>
+			<ingredient name="apparelShades" count="1"/>
+		</recipe>
+
+        <recipe name="OpGlassesAviator" count="1" material_base="true" craft_area="workbench" craft_time="5">
+			<ingredient name="apparelNerdGlasses" count="1"/>
+			<ingredient name="apparelSkiGoggles" count="1"/>
+			<ingredient name="apparelAviatorGoggles" count="1"/>
+			<ingredient name="apparelToughGuySunglasses" count="1"/>
+			<ingredient name="apparelShades" count="1"/>
+		</recipe>
+
+        <recipe name="OpGlassesSkiGoggles" count="1" material_base="true" craft_area="workbench" craft_time="5">
+			<ingredient name="apparelNerdGlasses" count="1"/>
+			<ingredient name="apparelSkiGoggles" count="1"/>
+			<ingredient name="apparelAviatorGoggles" count="1"/>
+			<ingredient name="apparelToughGuySunglasses" count="1"/>
+			<ingredient name="apparelShades" count="1"/>
+		</recipe>
+
+		<recipe name="OpGlassesNerd" count="1" material_base="true" craft_area="workbench" craft_time="5">
+			<ingredient name="apparelNerdGlasses" count="1"/>
+			<ingredient name="apparelSkiGoggles" count="1"/>
+			<ingredient name="apparelAviatorGoggles" count="1"/>
+			<ingredient name="apparelToughGuySunglasses" count="1"/>
+			<ingredient name="apparelShades" count="1"/>
+		</recipe>
+		
+<!-- Crafteo de los op glasses con vision nocturna -->
+
+		<recipe name="OpGlassesNVG" count="1" material_base="true" craft_area="workbench" craft_time="15">
+			<ingredient name="OpGlassesToughGuy" count="1"/>
+			<ingredient name="apparelNightvisionGoggles" count="1"/>
+		</recipe>
+
+		<recipe name="OpGlassesNVG" count="1" material_base="true" craft_area="workbench" craft_time="15">
+			<ingredient name="OpGlassesAviator" count="1"/>
+			<ingredient name="apparelNightvisionGoggles" count="1"/>
+		</recipe>
+
+		<recipe name="OpGlassesNVG" count="1" material_base="true" craft_area="workbench" craft_time="15">
+			<ingredient name="OpGlassesSkiGoggles" count="1"/>
+			<ingredient name="apparelNightvisionGoggles" count="1"/>
+		</recipe>
+
+		<recipe name="OpGlassesNVG" count="1" material_base="true" craft_area="workbench" craft_time="15">
+			<ingredient name="OpGlassesNerd" count="1"/>
+			<ingredient name="apparelNightvisionGoggles" count="1"/>
+		</recipe>
+		
+	</append>
+</OpGlasses>
