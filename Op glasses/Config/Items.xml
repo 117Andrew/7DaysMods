@@ -36,6 +36,7 @@
 				<display_value name="dTreasureBlocksPerReduction" value="-1"/>
 				<passive_effect name="AttributeLevel" tags="attFortitude" operation="base_add" value="1"/>
 			</effect_group>
-
+        </item>
+        
 	</append>
 </OpGlasses>
