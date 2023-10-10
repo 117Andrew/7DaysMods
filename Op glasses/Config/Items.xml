@@ -6,7 +6,7 @@
         <item name="OpGlassesToughGuy">
 			<property name="Tags" value="head,clothing,canHaveCosmetic,noMods"/>
 			<!-- <property name="DisplayType" value="clothing"/> -->
-			<property name="CustomIcon" value="apparelToughGuySunglasses"/>
+			<property name="CustomIcon" value="apparelShades"/>
 			<property name="CustomIconTint" value="efb810"/>
 			<property name="DescriptionKey" value="OpGlassesDesc"/>
 			<property name="DisplayType" value="clothingOpGlasses"/>
@@ -152,6 +152,72 @@
         </item>
 
 <!-- Skin de las gafas de vision nocturna en dorado para las op glasses con vision nocturna-->
+
+		<item name="OpGlassesNVG">
+			<property name="Tags" value="head,clothing,canHaveCosmetic,noMods"/>
+			<!-- <property name="DisplayType" value="clothing"/> -->
+			<property name="CustomIcon" value="apparelNightvisionGoggles"/>
+			<property name="CustomIconTint" value="efb810"/>
+			<property name="DescriptionKey" value="OneGlassesToRuleThemAllDesc"/>
+			<property name="DisplayType" value="clothingOneGlassesToRuleThemAll"/>
+			<property name="Stacknumber" value="1"/>
+			<property name="Class" value="ItemClassToggle"/>
+			<property name="Material" value="MelectricParts"/>
+			<property name="Weight" value="8"/>
+			<property name="DegradationBreaksAfter" value="false"/>
+			<property name="EconomicValue" value="5000"/>
+			<property name="ActivateObject" value="NightVision"/>
+			<property name="ImageEffectOnActive" value="NightVision"/>
+			<property name="PlaySoundOnActive" value="nightvision_toggle"/>
+			<property name="Active" value="false"/>
+			<property name="HoldType" value="45"/>
+			<property name="Meshfile" value="#Other/Items?Misc/sackPrefab.prefab"/>
+			<property name="DropMeshfile" value="#Other/Items?Misc/sack_droppedPrefab.prefab"/>
+			<property name="Group" value="Clothing,TCClothing"/>
+			<property name="EquipSlot" value="Eyes"/>
+			<property class="UMA">
+				<property name="Mesh" value="gear_nightvision_goggles"/>
+				<property name="Overlay0" value="gear_nightvision_goggles"/>
+				<property name="Layer" value="1"/>
+				<property name="UISlot" value="Eyewear"/>
+			</property>
+			<effect_group tiered="false">
+				<passive_effect name="ModSlots" operation="base_set" value="0"/>
+				<passive_effect name="AttributeLevel" operation="base_add" value="1" tags="attIntellect"/>
+				<passive_effect name="AttributeLevel" operation="base_add" value="1" tags="attPerception"/>
+				<passive_effect name="CraftingTime" operation="perc_add" value="-.1"/>
+				<passive_effect name="PlayerExpGain" operation="perc_add" value=".1"/>
+				<display_value name="dCraftingTime" value="-.1"/>
+				<display_value name="dPlayerExpGain" value=".1"/>
+				<passive_effect name="AttributeLevel" tags="attAgility" operation="base_add" value="1"/>
+				<passive_effect name="LootStage" operation="base_add" value="5.2"/>
+				<passive_effect name="TreasureBlocksPerReduction" operation="base_add" value="-1"/>
+				<display_value name="dTreasureBlocksPerReduction" value="-1"/>
+				<passive_effect name="AttributeLevel" tags="attFortitude" operation="base_add" value="1"/>
+			</effect_group>
+			<effect_group tiered="false">
+				<requirement name="IsLocalPlayer"/>
+				<triggered_effect trigger="onSelfItemActivate" action="ModifyScreenEffect" effect_name="NightVision" intensity="1" fade="0"/>
+				<triggered_effect trigger="onSelfItemDeactivate" action="ModifyScreenEffect" effect_name="NightVision" intensity="0" fade="0"/>
+				<triggered_effect trigger="onSelfEquipStop" action="ModifyScreenEffect" effect_name="NightVision" intensity="0" fade="0"/>
+
+				<triggered_effect trigger="onSelfEquipStart" action="AddPart" part="HeadLightTPV" prefab="ScreenEffects/DeferredNV/NVGLight" parentTransform="Spotlight" localPos="0,0,0" localRot="90,0,0"/>
+				<triggered_effect trigger="onSelfEquipStart" action="AddPart" part="HeadLightFPV" prefab="ScreenEffects/DeferredNV/NVGLight" parentTransform="CameraNode" localPos="0,0,.1" localRot="-90,0,0"/>
+				<triggered_effect trigger="onSelfEquipStop" action="RemovePart" part="HeadLightTPV"/>
+				<triggered_effect trigger="onSelfEquipStop" action="RemovePart" part="HeadLightFPV"/>
+				<triggered_effect trigger="onSelfItemActivate" action="SetPartActive" part="HeadLightTPV" active="@!.IsFPV"/>
+				<triggered_effect trigger="onSelfItemActivate" action="SetPartActive" part="HeadLightFPV" active="@.IsFPV"/>
+				<triggered_effect trigger="onSelfItemDeactivate" action="SetPartActive" part="HeadLightTPV" active="false"/>
+				<triggered_effect trigger="onSelfItemDeactivate" action="SetPartActive" part="HeadLightFPV" active="false"/>
+				<triggered_effect trigger="onSelfChangedView" action="SetPartActive" part="HeadLightTPV" active="@!.IsFPV"/>
+				<triggered_effect trigger="onSelfChangedView" action="SetPartActive" part="HeadLightFPV" active="@.IsFPV"/>
+			</effect_group>
+			<effect_group tiered="false">
+				<passive_effect name="ModSlots" operation="base_set" value="0"/>
+				<passive_effect name="HypothermalResist" operation="base_add" value="0"/>
+				<passive_effect name="HyperthermalResist" operation="base_add" value="0"/>
+			</effect_group>
+		</item>
 
 	</append>
 </OpGlasses>
