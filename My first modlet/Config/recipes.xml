@@ -1,0 +1,11 @@
+<MyFirstModlet>
+
+    <append xpath="/recipes">
+
+        <recipe name="resourceAcid" count="3">
+            <ingredient name="carBattery" count="1"/>
+        </recipe>
+
+    </append>
+
+</MyFirstModlet>
