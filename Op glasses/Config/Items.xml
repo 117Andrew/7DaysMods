@@ -1,0 +1,41 @@
+<OpGlasses>
+    <append xpath="/items">
+	
+		<item name="OpGlasses">
+			<property name="Tags" value="head,clothing,canHaveCosmetic,noMods"/>
+			<!-- <property name="DisplayType" value="clothing"/> -->
+			<property name="CustomIcon" value="apparelAviatorGoggles"/>
+			<property name="CustomIconTint" value="d95632"/>
+			<property name="DescriptionKey" value="OpGlassesDesc"/>
+			<property name="DisplayType" value="clothingOpGlasses"/>
+			<property name="Stacknumber" value="1"/>
+			<property name="EconomicValue" value="3000"/>
+			<property name="Material" value="MelectricParts"/> <property name="Weight" value="8"/>
+			<property name="DegradationBreaksAfter" value="false"/>
+			<property name="Meshfile" value="#Other/Items?Misc/sackPrefab.prefab"/>
+			<property name="DropMeshfile" value="#Other/Items?Misc/sack_droppedPrefab.prefab"/>
+			<property name="Group" value="Clothing"/>
+			<property name="EquipSlot" value="Eyes"/>
+			<property class="UMA">
+				<property name="Mesh" value="aviator_goggles"/>
+				<property name="Overlay0" value="aviator_goggles"/>
+				<property name="Layer" value="1"/>
+				<property name="UISlot" value="Eyewear"/>
+			</property>
+			<effect_group tiered="false">
+				<passive_effect name="ModSlots" operation="base_set" value="0"/>
+				<passive_effect name="AttributeLevel" operation="base_add" value="1" tags="attIntellect"/>
+				<passive_effect name="AttributeLevel" operation="base_add" value="1" tags="attPerception"/>
+				<passive_effect name="CraftingTime" operation="perc_add" value="-.1"/>
+				<passive_effect name="PlayerExpGain" operation="perc_add" value=".1"/>
+				<display_value name="dCraftingTime" value="-.1"/>
+				<display_value name="dPlayerExpGain" value=".1"/>
+				<passive_effect name="AttributeLevel" tags="attAgility" operation="base_add" value="1"/>
+				<passive_effect name="LootStage" operation="base_add" value="5.2"/>
+				<passive_effect name="TreasureBlocksPerReduction" operation="base_add" value="-1"/>
+				<display_value name="dTreasureBlocksPerReduction" value="-1"/>
+				<passive_effect name="AttributeLevel" tags="attFortitude" operation="base_add" value="1"/>
+			</effect_group>
+
+	</append>
+</OpGlasses>
