@@ -1,0 +1,48 @@
+<UltimateAI>
+    <append xpath="/items_modifiers">
+
+<!-- This mood contain all attribute boost without the effects of the treasure hunter mod -->
+    <item_modifiername="modArmorUltimateAI" installable_tags="armorHead" modifier_tags="attributeBoost" blocked_tags="noMods" type="attachment">
+        <property name="Extends" value="modGeneralMaster" param1="CustomIcon"/>
+		<property name="CustomIcon" value="modArmorIntellect"/>
+        <property name="CustomIconTint" value="efb810"/>
+		<property name="TraderStageTemplate" value="modsTier2"/>
+		<property name="Material" value="Msteel"/>
+		<property name="EconomicValue" value="1"/>
+
+        <effect_group tiered="false">
+            <passive_effect name="AttributeLevel" tags="attPerception" operation="base_add" value="1"/>
+            <passive_effect name="AttributeLevel" tags="attStrength" operation="base_add" value="1"/>
+            <passive_effect name="AttributeLevel" tags="attFortitude" operation="base_add" value="1"/>
+            <passive_effect name="AttributeLevel" tags="attAgility" operation="base_add" value="1"/>
+            <passive_effect name="AttributeLevel" tags="attIntellect" operation="base_add" value="1"/>
+        </effect_group>
+    </item_modifier>
+
+<!-- This mood contain all attribute boost and the effect of the treasure hunter mod -->
+
+    <item_modifier name="modArmorUltimateAITH" installable_tags="armorHead" modifier_tags="attributeBoost" blocked_tags="noMods" type="attachment">
+		<property name="Extends" value="modGeneralMaster" param1="CustomIcon"/>
+		<property name="CustomIcon" value="modArmorTreasureHunter"/>
+        <property name="CustomIconTint" value="efb810"/>
+		<property name="TraderStageTemplate" value="modsTier2"/>
+		<property name="Material" value="Msteel"/>
+		<property name="EconomicValue" value="1"/>
+
+	    <effect_group tiered="false">
+		    <passive_effect name="ModSlots" operation="base_set" value="0"/>
+		    <passive_effect name="LootStage" operation="base_add" value="5"/>
+		    <passive_effect name="PlayerExpGain" operation="perc_add" value=".1"/>
+		    <passive_effect name="TreasureBlocksPerReduction" operation="base_add" value="-1"/>
+            <passive_effect name="AttributeLevel" tags="attPerception" operation="base_add" value="1"/>
+            <passive_effect name="AttributeLevel" tags="attStrength" operation="base_add" value="1"/>
+            <passive_effect name="AttributeLevel" tags="attFortitude" operation="base_add" value="1"/>
+            <passive_effect name="AttributeLevel" tags="attAgility" operation="base_add" value="1"/>
+            <passive_effect name="AttributeLevel" tags="attIntellect" operation="base_add" value="1"/>
+		    <display_value name="dTreasureBlocksPerReduction" value="-1"/>
+		    <display_value name="dPlayerExpGain" value=".1"/>
+	    </effect_group>
+	</item_modifier>
+
+    </append>
+</UltimateAI>
