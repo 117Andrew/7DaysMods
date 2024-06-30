@@ -1,8 +1,8 @@
 <UltimateAI>
-    <append xpath="/items_modifiers">
+    <insertAfter xpath="/item_modifiers/item_modifier[@name='modArmorIntellect']">
 
 <!-- This mood contain all attribute boost without the effects of the treasure hunter mod -->
-    <item_modifiername="modArmorUltimateAI" installable_tags="armorHead" modifier_tags="attributeBoost" blocked_tags="noMods" type="attachment">
+    <item_modifier name="modArmorUltimateAI" installable_tags="armorHead" modifier_tags="attributeBoost" blocked_tags="noMods" type="attachment">
         <property name="Extends" value="modGeneralMaster" param1="CustomIcon"/>
 		<property name="CustomIcon" value="modArmorIntellect"/>
         <property name="CustomIconTint" value="efb810"/>
@@ -44,5 +44,5 @@
 	    </effect_group>
 	</item_modifier>
 
-    </append>
+    </insertAfter>
 </UltimateAI>

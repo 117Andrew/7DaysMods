@@ -1,7 +1,7 @@
 <UltimateAI>
-    <append xpath="/recipes">
+    <insertAfter xpath="/item_modifiers/item_modifier[@name='modArmorIntellect']">
 
-    <recipe name="modArmorUltimateAI" count="1" material_base="true" craft_area="workbench" craft_time="5">
+    <recipe name="modArmorUltimateAI" count="1" material_base="true" craft_area="workbench" craft_time="15">
 		<ingredient name="modArmorPerception" count="1"/>
 		<ingredient name="modArmorStrength" count="1"/>
 		<ingredient name="modArmorFortitude" count="1"/>
@@ -9,10 +9,10 @@
 		<ingredient name="modArmorIntellect" count="1"/>
     </recipe>
 
-    <recipe name="modArmorUltimateAITH" count="1" material_base="true" craft_area="workbench" craft_time="5">
+    <recipe name="modArmorUltimateAITH" count="1" material_base="true" craft_area="workbench" craft_time="15">
 		<ingredient name="modArmorUltimateAI" count="1"/>
 		<ingredient name="modArmorTreasureHunter" count="1"/>
     </recipe>
 
-    </append>
+    </insertAfter>
 </UltimateAI>
