@@ -1,5 +1,5 @@
 <UltimateAI>
-    <insertAfter xpath="/item_modifiers/item_modifier[@name='modArmorIntellect']">
+    <append xpath="/recipes">
 
     <recipe name="modArmorUltimateAI" count="1" material_base="true" craft_area="workbench" craft_time="15">
 		<ingredient name="modArmorPerception" count="1"/>
@@ -14,5 +14,5 @@
 		<ingredient name="modArmorTreasureHunter" count="1"/>
     </recipe>
 
-    </insertAfter>
+    </append>
 </UltimateAI>
