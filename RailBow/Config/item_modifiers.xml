@@ -1,0 +1,150 @@
+<configs>
+<insertAfter xpath="/item_modifiers">
+<item_modifier name="7roundCrossbowMagazine" installable_tags="crossbow" modifier_tags="magazine" blocked_tags="noMods" type="attachment">
+		<property name="Stacknumber" value="1"/> <property name="Group" value="Mods"/>
+		<property name="CustomIcon" value="modGunMagazineExtender" />
+		<property name="CustomIconTint" value="FD9095" />
+		<property name="DescriptionKey" value="7roundCrossbowMagazineDesc" />
+		<effect_group tiered="false">
+			<passive_effect name="MagazineSize" operation="base_add" value="6"/>
+		</effect_group>
+		<effect_group name="sneak damage bonus">
+		<requirement name="CVarCompare" cvar="_crouching" operation="Equals" value="1"/>
+		<requirement name="CVarCompare" cvar="_notAlerted" operation="GT" value="0" target="other"/>
+			<passive_effect name="DamageBonus" operation="base_add" value="-0.5"/>
+			<passive_effect name="EntityDamage" operation="perc_add" value="-0.5" tags="perkArchery"/>
+			<display_value name="dEntityDamageSneak" value="-0.5"/>
+	</effect_group>
+		<property name="PickupJournalEntry" value="augmentGunsTip"/>
+	</item_modifier>
+	</append>
+	<append xpath="/item_modifiers">
+<item_modifier name="ElectrifiedArrowsmod" installable_tags="crossbow,bow" modifier_tags="arrowmod" blocked_tags="noMods" type="attachment">
+		<property name="Stacknumber" value="1"/> <property name="Group" value="Mods"/>
+		<property name="CustomIcon" value="ammoCrossbowBoltSteelAP" />
+		<property name="CustomIconTint" value="FD9095" />
+		<property name="DropMeshfile" value="#Other/Items?Misc/sack_droppedPrefab.prefab"/>
+		<property name="DescriptionKey" value="ElectrifiedArrowsmodDesc" />
+		<effect_group tiered="false">
+			<requirement name="ProgressionLevel" progression_name="perkElectrocutioner" operation="GTE" value="2"/>
+			<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="50"/>
+				<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" buff="buffshocked"/>
+		</effect_group>
+		<property name="PickupJournalEntry" value="augmentGunsTip"/>
+	</item_modifier>
+	</append>
+	<append xpath="/item_modifiers">	
+<item_modifier name="SiegeCrossbowconversion" installable_tags="crossbow" modifier_tags="magazine" blocked_tags="noMods" type="attachment">
+		<property name="Stacknumber" value="1"/> <property name="Group" value="Mods"/>
+		<property name="CustomIcon" value="modGunMagazineExtender" />
+		<property name="CustomIconTint" value="FD9095" />
+		<property name="DropMeshfile" value="#Other/Items?Misc/sack_droppedPrefab.prefab"/>
+		<property name="DescriptionKey" value="SiegeCrossbowconversionDesc" />
+		<effect_group tiered="false">
+			<requirement name="ProgressionLevel" progression_name="perkArchery" operation="GTE" value="3"/>
+			<requirement name="CVarCompare" cvar="_crouching" operation="Equals" value="1"/>
+			<passive_effect name="MagazineSize" operation="base_add" value="2"/>
+			<passive_effect name="BurstRoundCount" operation="base_set" value="3"/>
+			<passive_effect name="Mobility" operation="perc_add" value="-.50"/>
+			<passive_effect name="EntityDamage" operation="perc_add" value=".75"/>
+			<passive_effect name="SpreadDegreesVertical" operation="base_set" value="2" tags="perkArchery"/>
+			<passive_effect name="SpreadDegreesHorizontal" operation="base_set" value="2" tags="perkArchery"/>
+			<passive_effect name="SpreadMultiplierAiming" operation="base_set" value="0" tags="perkArchery"/>
+			<passive_effect name="SpreadMultiplierCrouching" operation="base_set" value="0" tags="perkArchery"/>
+			<passive_effect name="SpreadMultiplierWalking" operation="base_set" value="20" tags="perkArchery"/>
+			<passive_effect name="SpreadMultiplierRunning" operation="base_set" value="20" tags="perkArchery"/>
+			<passive_effect name="ReloadSpeedMultiplier" operation="perc_add" value="-.25"/>
+			<passive_effect name="ProjectileVelocity" operation="perc_add" value=".15"/>
+			<passive_effect name="TargetArmor" operation="perc_add" value="-.1"/>
+		</effect_group>
+		<effect_group tiered="false">
+			<requirement name="CVarCompare" cvar="_crouching" operation="Equals" value="0"/>
+			<passive_effect name="BurstRoundCount" operation="base_set" value="0"/>
+			<passive_effect name="MagazineSize" operation="base_add" value="2"/>
+			<passive_effect name="Mobility" operation="perc_add" value="-.50"/>
+			<passive_effect name="EntityDamage" operation="perc_add" value=".75"/>
+			<passive_effect name="SpreadDegreesVertical" operation="base_set" value="2" tags="perkArchery"/>
+			<passive_effect name="SpreadDegreesHorizontal" operation="base_set" value="2" tags="perkArchery"/>
+			<passive_effect name="SpreadMultiplierAiming" operation="base_set" value="0" tags="perkArchery"/>
+			<passive_effect name="SpreadMultiplierCrouching" operation="base_set" value="0" tags="perkArchery"/>
+			<passive_effect name="SpreadMultiplierWalking" operation="base_set" value="20" tags="perkArchery"/>
+			<passive_effect name="SpreadMultiplierRunning" operation="base_set" value="20" tags="perkArchery"/>
+			<passive_effect name="ReloadSpeedMultiplier" operation="perc_add" value="-.25"/>
+			<passive_effect name="ProjectileVelocity" operation="perc_add" value=".15"/>
+			<passive_effect name="TargetArmor" operation="perc_add" value="-.1"/>
+		</effect_group>
+		<effect_group name="sneak damage bonus">
+		<requirement name="CVarCompare" cvar="_crouching" operation="Equals" value="1"/>
+		<requirement name="CVarCompare" cvar="_notAlerted" operation="GT" value="0" target="other"/>
+			<passive_effect name="DamageBonus" operation="base_add" value="-2"/>
+			<passive_effect name="EntityDamage" operation="perc_add" value="-2" tags="perkArchery"/>
+			<display_value name="dEntityDamageSneak" value="-2"/>
+	</effect_group>
+		<property name="PickupJournalEntry" value="augmentGunsTip"/>
+	</item_modifier>
+	</append>
+	<append xpath="/item_modifiers">	
+<item_modifier name="RailBrace" installable_tags="crossbow" modifier_tags="magazine" blocked_tags="noMods" type="attachment">
+		<property name="Stacknumber" value="1"/> <property name="Group" value="Mods"/>
+		<property name="CustomIcon" value="modGunMagazineExtender" />
+		<property name="CustomIconTint" value="FD9095" />
+		<property name="DropMeshfile" value="#Other/Items?Misc/sack_droppedPrefab.prefab"/>
+		<property name="DescriptionKey" value="RailBraceDesc" />
+		<effect_group tiered="false">
+		<requirement name="ProgressionLevel" progression_name="perkPenetrator" operation="GTE" value="1"/>
+			<passive_effect name="ProjectileVelocity" operation="perc_add" value="20"/>
+			<passive_effect name="TargetArmor" operation="perc_add" value="-.15"/>
+			<passive_effect name="EntityDamage" operation="base_add" value="30"/>
+		</effect_group>
+	</item_modifier>
+	</append>
+	<append xpath="/item_modifiers">	
+	<item_modifier name="Doubleshotbow" installable_tags="bow" modifier_tags="magazine" blocked_tags="noMods" type="attachment">
+		<property name="Stacknumber" value="1"/> <property name="Group" value="Mods"/>
+		<property name="CustomIcon" value="modGunMagazineExtender" />
+		<property name="CustomIconTint" value="FD9095" />
+		<property name="DropMeshfile" value="#Other/Items?Misc/sack_droppedPrefab.prefab"/>
+		<property name="DescriptionKey" value="DoubleshotbowDesc" />
+		<effect_group tiered="false">
+			<passive_effect name="MagazineSize" operation="base_add" value="1"/>
+			<passive_effect name="BurstRoundCount" operation="base_set" value="2"/>
+		</effect_group>
+		<property name="PickupJournalEntry" value="augmentGunsTip"/>
+	</item_modifier>
+	</append>
+	<append xpath="/item_modifiers">	
+	<item_modifier name="Bleedarrows" installable_tags="crossbow" modifier_tags="arrowmod" blocked_tags="noMods" type="attachment">
+		<property name="Stacknumber" value="1"/> <property name="Group" value="Mods"/>
+		<property name="CustomIcon" value="ammoCrossbowBoltSteelAP" />
+		<property name="CustomIconTint" value="FD9095" />
+		<property name="DropMeshfile" value="#Other/Items?Misc/sack_droppedPrefab.prefab"/>
+		<property name="DescriptionKey" value="BleedarrowsDesc" />
+		<effect_group tiered="false">
+			<requirement name="CVarCompare" cvar="bleedCounter" operation="LT" value="@$maxBleedCounter" target="other"/>
+				<triggered_effect trigger="onSelfAttackedOther" action="ModifyCVar" target="other" cvar="bleedCounter" operation="add" value="1"/>
+		</effect_group>
+		<effect_group tiered="false">
+			<requirement name="CVarCompare" cvar="bleedCounter" operation="GT" value="0" target="other"/>
+				<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" buff="buffInjuryBleeding"/>
+		</effect_group>
+		<effect_group tiered="false">
+		<requirement name="CVarCompare" cvar="$bleedSlowdown" operation="GT" value="-.1" target="other"/>
+			<requirement name="ProgressionLevel" progression_name="perkDeepCuts" operation="GTE" value="1"/>
+			<requirement name="ProgressionLevel" progression_name="perkDeepCuts" operation="LT" value="3"/>
+				<triggered_effect trigger="onSelfAttackedOther" action="ModifyCVar" target="other" cvar="$bleedSlowdown" operation="set" value="-.1"/>
+		</effect_group>
+		<effect_group tiered="false">
+		<requirement name="CVarCompare" cvar="$bleedSlowdown" operation="GT" value="-.15" target="other"/>
+			<requirement name="ProgressionLevel" progression_name="perkDeepCuts" operation="GTE" value="3"/>
+			<requirement name="ProgressionLevel" progression_name="perkDeepCuts" operation="LT" value="5"/>
+				<triggered_effect trigger="onSelfAttackedOther" action="ModifyCVar" target="other" cvar="$bleedSlowdown" operation="set" value="-.15"/>
+		</effect_group>
+		<effect_group tiered="false">
+		<requirement name="CVarCompare" cvar="$bleedSlowdown" operation="GT" value="-.20" target="other"/>
+			<requirement name="ProgressionLevel" progression_name="perkDeepCuts" operation="Equals" value="5"/>
+				<triggered_effect trigger="onSelfAttackedOther" action="ModifyCVar" target="other" cvar="$bleedSlowdown" operation="set" value="-.20"/>
+		</effect_group>
+		<property name="PickupJournalEntry" value="augmentGunsTip"/>
+	</item_modifier>
+	</append>
+	</configs>
